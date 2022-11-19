@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$light: #d1fae5;
+$green: #047857;
+
+.container {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-gap: 25px;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: $light;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 5px rgba(212,185,150,.5);
+    transition: .5s;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+
+    &:hover{
+        transform: scale(0.9);
+        background-color: rgba(255,255,255,0.8);
+    }
+
+    img {
+        width: auto;
+        height: auto;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    &-bottom{
+        display: flex;
+        flex-direction: column;
+        &__title{
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            padding: 4px;
+        }
+        &__amount{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: $green;
+            color: $light;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 0.2rem;
+            border-radius: 8px;
+        }
+    }
+}
+
+.overlay {
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-inner {
+        background: white;
+        width: 700px;
+        height: 550px;
+        padding: 1.5rem;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 1.3rem;
+
+        .close{
+            position: absolute;
+            top:1rem;
+            right: 1rem;
+            outline: none;
+            border: none;
+            font-size: 17px;
+            background-color: transparent;
+        }
+
+        &__box {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            img {
+                margin-right: 20px;
+                width: 150px;
+                height: 200px;
+            }
+        }
+
+        &__description{
+            margin-top: 2rem;
+            text-align: justify;
+            font-size: 13px;
+        }
+    }
+}
+
+.info h3{
+    margin-top: 10px;
+}
+.info h4{
+    color: $green;
+}
+.info button{
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color: $green;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+}
