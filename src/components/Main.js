@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import {
+    FaAdjust,
+    FaSun,
+    } from 'react-icons/fa';
+import useDarkMode from '../hooks/useDarkMode';
 
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-// import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-// import '../styles/styles.scss';
+const ThemeIcon = () => {
+    const [darkTheme, setDarkTheme] = useDarkMode();
+    const handleMode = () => setDarkTheme(!darkTheme);
+    return (
+        <span onClick={handleMode}>
+            {darkTheme ? (
+            <FaSun size='26' className='top-navigation-icon' />
+            ) : (
+            <FaAdjust size='26' className='top-navigation-icon' />
+            )}
+        </span>
+    );
+};
 
 const Main = () =>{
     const [search, setSearch]=useState("");
@@ -19,25 +34,32 @@ const Main = () =>{
     }
     return(
         <>
-            <div className="header flex flex-wrap w-full justify-center pt-14 h-fit bg-emerald-700">
-                <div className="header__logo items-start w-40 h-40 px-4">
-                    <img className="" src="../images/logo.png" alt="no se ve"></img>
-                </div>
-                <div className="header__main flex flex-col justify-around mx-40">
-                    <h2 className="font-sans text-4xl subpixel-antialiased font-extrabold tracking-wide text-white pt-12">Encuentra tu próxima lectura en formato Epub</h2>
-                    <div className="header__main-search font-sans flex text-3xl py-24">
-                        <input className="items-center w-full h-12 p-4 rounded-xl outline-emerald-100" type="text" placeholder="Escribe el título que buscas y pulsa enter"
-                        value={search} onChange={e=>setSearch(e.target.value)}
-                        onKeyPress={searchBook}
-                        />
+            <div className="color bg-slate-50 dark:bg-black">
+                <div className="header">
+                    <div className="self-end mr-32">
+                        <ThemeIcon />
+                    </div>
+                    <div className="header-main">
+                        <h2 className="header-main__title">Encuentra tu próxima lectura en formato Epub</h2>
+                        <label for="simple-search" class="sr-only">Buscador</label>
+                        <div className="relative">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" className="w-6 h-6 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <input type="text" id="simple-search" className="input" placeholder="Escribe un título" required 
+                            value={search} onChange={e=>setSearch(e.target.value)}
+                            onKeyPress={searchBook}
+                            />
+                        </div>
                     </div>
                 </div>
+                <div className="container">
+                    {
+                        <Card book={bookData} />
+                    }
+                </div>
             </div>
-            <div className="container grid-cols-5 gap-4">
-                {
-                    <Card book={bookData} />
-                }
-            </div>
+            
         </>
     )
 }

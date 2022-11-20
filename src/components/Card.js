@@ -15,8 +15,9 @@ const Card = ( {book} )=>{
                     {
                         return(
                             <>
-                                <div className="card shadow-sm" onClick={()=>{setShow(true);setItem(item)}}>
-                                    <img src={thumbnail} alt="book" />
+                                <div className="card group" 
+                                onClick={()=>{setShow(true);setItem(item)}}>
+                                    <img className="thumbnail p-8 rounded-t-lg" src={thumbnail} alt={item.volumeInfo.title} />
                                     <div className="card-bottom">
                                         <h3 className="card-bottom__title">{item.volumeInfo.title}</h3>
                                         <p className="card-bottom__amount">{amount}&#8364;</p>

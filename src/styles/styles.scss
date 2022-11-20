@@ -1,19 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 $light: #d1fae5;
 $green: #047857;
 
-.container {
-    width: 65%;
-    margin: 0 auto;
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
-    grid-gap: 25px;
-    box-sizing: border-box;
-}
 
 .card {
     display: flex;
@@ -132,3 +120,7 @@ $green: #047857;
     font-weight: bold;
     padding: 0.3rem 0.5rem;
 }
+
+// input {
+//     font-family: FontAwesome !important;
+// }
