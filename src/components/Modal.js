@@ -8,10 +8,10 @@ const Modal = ({show, item, onClose})=>{
     let thumbnail=item.volumeInfo.imageLinks.smallThumbnail;
     return(
         <>
-            <div className="overlay min-h-screen w-full fixed left-0 top-0 right-0 bottom-0 bg-gradient-to-r from-purple-500 to-pink-500 flex justify-center items-center">
-                <div className="overlay-inner relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-4xl">
-                    <button className="close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" onClick={onClose}><i class="fas fa-times"></i></button>
-                    <div className="overlay-inner__box">
+            <div className="overlay">
+                <div className="overlay-inner">
+                    <button className="close" onClick={onClose}><i class="fas fa-times"></i></button>
+                    <div className="overlay-inner__box flex">
                         <img src={thumbnail} alt="" />
                         <div className="info">
                             <h1>{item.volumeInfo.title}</h1>

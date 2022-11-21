@@ -34,7 +34,7 @@ const Main = () =>{
     }
     return(
         <>
-            <div className="color bg-slate-50 dark:bg-black">
+            <div className="color bg-slate-50 dark:bg-black min-h-screen">
                 <div className="header">
                     <div className="self-end mr-32">
                         <ThemeIcon />
