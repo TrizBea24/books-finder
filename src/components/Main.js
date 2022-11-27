@@ -36,7 +36,7 @@ const Main = () =>{
         <>
             <div className="color bg-slate-50 dark:bg-black min-h-screen">
                 <div className="header">
-                    <div className="self-end mr-32">
+                    <div className="md:self-end self-center md:mr-32">
                         <ThemeIcon />
                     </div>
                     <div className="header-main">
@@ -53,7 +53,7 @@ const Main = () =>{
                         </div>
                     </div>
                 </div>
-                <div className="container">
+                <div className="container-books">
                     {
                         <Card book={bookData} />
                     }
