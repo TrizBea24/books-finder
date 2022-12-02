@@ -10,13 +10,15 @@ const Modal = ({show, item, onClose})=>{
         <>
             <div className="overlay">
                 <div className="overlay-inner">
-                    <button className="close" onClick={onClose}><i class="fas fa-times"></i></button>
+                    <button className="close" onClick={onClose}><i className="fas fa-times"></i></button>
                     <div className="info-box">
                         <img className="info-box__book" src={thumbnail} alt={item.volumeInfo.title} />
                         <div>
                             <h1 className="info-box__title">{item.volumeInfo.title}</h1>
-                            <h3 className="info-box__author">{item.volumeInfo.authors}</h3>
-                            <h4 className="info-box__publisher">{item.volumeInfo.publisher}<span>{item.volumeInfo.publishedDate}</span></h4><br/>
+                            <h3 className="info-box__author">{item.volumeInfo.authors.length > 2 ?
+                                `${item.volumeInfo.authors.substring(0, 2)} ...` : item.volumeInfo.authors
+                            }</h3>
+                            <h4 className="info-box__publisher"><span className="info-box__publisher-date">{item.volumeInfo.publishedDate}</span></h4><br/>
                             <a href={item.volumeInfo.previewLink}><button className="info-box__more">Más</button></a>
                         </div>
                     </div>

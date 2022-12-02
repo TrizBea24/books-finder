@@ -48,7 +48,7 @@
     }
 
     .card {
-        @apply w-full sm:w-52 h-96 border flex flex-col shadow-md cursor-pointer 
+        @apply w-full sm:w-52 h-[23rem] border flex flex-col shadow-md cursor-pointer 
         max-[507px]:my-6 max-[507px]:h-60 max-[507px]:flex-row
         border-gray-200 bg-white rounded-lg 
         dark:bg-slate-900 dark:border-gray-700
@@ -62,8 +62,8 @@
             ;
 
             &__title {
-                @apply text-xl font-semibold tracking-tight text-gray-900
-                max-[507px]:text-2xl max-[400px]:text-xl
+                @apply text-lg font-semibold tracking-tight text-gray-900
+                max-[507px]:text-2xl
                 dark:text-white
                 dark:group-hover:text-black
                 ;
@@ -79,8 +79,10 @@
     }
 
     .container-books {
-        grid-template-columns: repeat(auto-fit,minmax(200px, 0.5fr)); //From 507 shows two columns 
-        @apply gap-4 mt-10 min-[507px]:mx-auto pb-6 w-full min-[507px]:w-5/6 
+        grid-template-columns: repeat(auto-fit,minmax(190px, 0.5fr)); //From 507 shows two columns 
+        @apply gap-6 mt-10 
+        min-[507px]:mx-auto
+        pb-6 min-[507px]:w-5/6 
         min-[507px]:grid box-border
         ;
     }
@@ -94,11 +96,12 @@
     
         &-inner {
             @apply relative bg-white rounded-lg shadow dark:bg-gray-800
-            w-screen md:w-1/2 h-screen md:h-5/6 overflow-y-auto p-6 box-border
+            w-screen md:w-4/5 lg:w-1/2 h-screen md:h-auto md:max-h-[32rem] overflow-y-auto p-6 
+            box-border
             ; 
 
             .close{
-                @apply absolute top-4 right-4 outline-none border-none text-3xl
+                @apply absolute top-2 right-6 ml-2 outline-none border-none text-3xl
                 text-gray-400 bg-transparent hover:text-gray-900 dark:hover:text-yellow-400
                 dark:hover:ring-2 dark:hover:ring-yellow-300
                 ;
@@ -107,7 +110,7 @@
     }
 
     .info-box {
-        @apply flex justify-center 
+        @apply flex justify-start
         ;
 
         &__book {
@@ -121,10 +124,14 @@
             ;
         }
 
-        &__author, &__publisher {
+        &__publisher, &__author {
             @apply text-gray-900 dark:text-gray-50
             leading-7 text-xl
             ;
+
+            &-date {
+                @apply italic;
+            }
         }
 
         &__more {
@@ -138,7 +145,7 @@
 
     .description {
         @apply text-black dark:text-white
-        text-lg leading-6 font-normal text-justify my-3
+        text-lg md:text-base leading-6 font-normal text-justify my-3
         ;
     }
 }
