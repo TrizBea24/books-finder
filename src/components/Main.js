@@ -6,6 +6,7 @@ import {
     FaSun,
     } from 'react-icons/fa';
 import useDarkMode from '../hooks/useDarkMode';
+import "../styles/main.scss";
 
 const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();

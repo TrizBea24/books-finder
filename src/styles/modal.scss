@@ -1,1 +1,66 @@
 @tailwind components;
+
+@layer components {
+
+    .overlay {
+        @apply w-full min-h-screen fixed left-0 top-0 right-0 bottom-0 flex 
+        justify-center items-center
+        bg-emerald-700 dark:bg-black
+        ;
+
+    
+        &-inner {
+            @apply relative bg-white rounded-lg shadow dark:bg-gray-800
+            w-screen md:w-4/5 lg:w-1/2 h-screen md:h-auto md:max-h-[32rem] overflow-y-auto p-6 
+            box-border
+            ; 
+
+            .close{
+                @apply absolute top-2 right-6 ml-2 outline-none border-none text-3xl
+                text-gray-400 bg-transparent hover:text-gray-900 dark:hover:text-yellow-400
+                dark:hover:ring-2 dark:hover:ring-yellow-300
+                ;
+            }
+        }
+    }
+
+    .info-box {
+        @apply flex justify-start
+        ;
+
+        &__book {
+            @apply mr-8 w-fit h-fit
+            ;
+        }
+
+        &__title {
+            @apply my-2 text-2xl md:text-xl font-semibold
+            text-black dark:text-white 
+            ;
+        }
+
+        &__publisher, &__author {
+            @apply text-gray-900 dark:text-gray-50
+            leading-7 text-xl
+            ;
+
+            &-date {
+                @apply italic;
+            }
+        }
+
+        &__more {
+            @apply font-semibold text-2xl w-20 h-10 rounded-lg
+            dark:text-black hover:ring-2 dark:hover:ring-yellow-300 dark:bg-yellow-300
+            text-white bg-emerald-700 hover:ring-emerald-700
+            ;
+        }
+        
+    }
+
+    .description {
+        @apply text-black dark:text-white
+        text-lg md:text-base leading-6 font-normal text-justify my-3
+        ;
+    }
+}
