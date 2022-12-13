@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Web application for epub books search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an exercise for General Assembly Web Development Course. It was asked to use
+a public API and make some unity tests. This exercise is done with React, Tailwind,
+HTML and Sass.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+To check the result of the web page's development, please check the next link: 
+https://trizbea24.github.io/books-finder/
 
-### `npm start`
+## Development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Structure:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application has a few components:
 
-### `npm test`
+- A header with a theme button to change the appearance.
+- A search bar.
+- A list of results where the books appear.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Search:
 
-### `npm run build`
+- Firstly the application takes the input written by the user and makes a request to [Google books API](https://developers.google.com/books/docs/v1/using).
+- The content provided from the API will appear as a card with an image of the book, a title and a price.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Book's modal:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once the book's cards are displayed, the user can click on one of them. Then it will appear a modal with extended information about the book. The layaout will change:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The background will be one colour depending on the theme.
+- The modal will have a desc ription about the book. If the description is too long, the modal will have a scrollbar.
+- Users can only close the modal on the X button.
 
-### `npm run eject`
+## Application preview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img alt="Application preview" title="Application preview" src="src/images/books-finder-preview.PNG"/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To use this project you may need to follow the next steps:
+- Clone the repo
+- Install the dependencies with `npm install`
+- Start the project with `npm start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project has been developed by **Beatriz García Martín**.

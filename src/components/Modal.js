@@ -11,7 +11,7 @@ const Modal = ({show, item, onClose})=>{
         <>
             <div className="overlay">
                 <div className="overlay-inner">
-                    <button className="close" onClick={onClose}><i className="fas fa-times"></i></button>
+                    <button className="close" data-testid="close" onClick={onClose}><i className="fas fa-times"></i></button>
                     <div className="info-box">
                         <img className="info-box__book" src={thumbnail} alt={item.volumeInfo.title} />
                         <div>
