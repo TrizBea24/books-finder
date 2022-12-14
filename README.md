@@ -1,4 +1,7 @@
 # Web application for epub books search
+Version: 1.0.0
+Author: Beatriz García
+Author URI: https://github.com/TrizBea24
 
 This is an exercise for General Assembly Web Development Course. It was asked to use
 a public API and make some unity tests. This exercise is done with React, Tailwind,
