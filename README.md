@@ -7,7 +7,7 @@ HTML and Sass.
 ## Demo
 
 To check the result of the web page's development, please check the next link: 
-xxxxxx
+https://trizbea24.github.io/books-finder/
 
 ## Development
 
