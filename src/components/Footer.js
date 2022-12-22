@@ -7,7 +7,7 @@ const Footer = () => {
   let year = 2022
 
   return (
-      <div className="copyright">
+      <div className="copyright" data-testid='tested'>
         { //Check if actual year is 2022
         (year === update)
           ? <p>&copy; 2022 Beatriz García Martín</p>
